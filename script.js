@@ -1,16 +1,16 @@
-function appendValue(value){
-    document.getElementById("display").value += value;
-}
-
-function clearDisplay(){
-    document.getElementById("display").value = "";
-}
-
 function calculate(){
     let display = document.getElementById("display");
 
     try{
-        display.value = eval(display.value);
+        let expression = display.value;
+        let result = eval(expression);
+
+        let historyList = document.getElementById("historyList");
+        let li = document.createElement("li");
+        li.textContent = expression + " = " + result;
+        historyList.prepend(li);
+
+        display.value = result;
     }
     catch{
         display.value = "Error";
