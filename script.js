@@ -12,6 +12,7 @@ function calculate(){
 
     try{
         let expression = display.value.replace(/%/g, "/100");
+        let result = eval(expression);
         let expression = display.value;
         let result = eval(expression);
 
