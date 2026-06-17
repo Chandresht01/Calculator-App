@@ -50,3 +50,7 @@ document.addEventListener("keydown", function(event){
     }
 
 });
+
+function toggleTheme(){
+    document.body.classList.toggle("light");
+}
