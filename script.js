@@ -30,3 +30,23 @@ function deleteLast(){
     let display = document.getElementById("display");
     display.value = display.value.slice(0,-1);
 }
+
+document.addEventListener("keydown", function(event){
+
+    if(!isNaN(event.key) || "+-*/.".includes(event.key)){
+        appendValue(event.key);
+    }
+
+    if(event.key === "Enter"){
+        calculate();
+    }
+
+    if(event.key === "Backspace"){
+        deleteLast();
+    }
+
+    if(event.key === "Escape"){
+        clearDisplay();
+    }
+
+});
